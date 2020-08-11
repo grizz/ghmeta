@@ -1,0 +1,26 @@
+ghmeta:
+  sync_to:
+#  - peeringdb/peeringdb-py
+#  - peeringdb/django-peeringdb
+labels: []
+milestones:
+- description: "Issues under Decide queue. \r\nIssues are kept in Decide while the\
+    \ Product Committee discusses the issue. \r\nNext milestone is \"Consensus Reached\""
+  title: 1 Decide
+- description: "Issues that are in the Consensus queue.\r\nWhen a decision is made\
+    \ about how an issue will be dealt with by the Product Committee, the issue is\
+    \ moved to \"Consensus Reached\"\r\nNext milestone is \"Consensus Finalized\"\r\
+    \nPrevious milestone is \"Decide\""
+  title: 2 Consensus Reached
+- description: "When an issue is at milestone \"Consensus reached\" PC members have\
+    \ the opportunity to oppose for five days. If no one objects the issue is moved\
+    \ forward to Consensus Finalized.\r\nIssues here wait for implementation details\
+    \ fo be sorted out.\r\nThe next milestone is \"Implementation Discussion\""
+  title: 3 Consensus Finalized
+- description: 'Last milestone before milestone "Next release". The predecessor is
+    "Consensus Finalized". '
+  title: 4 Ready for Implementation
+- description: ''
+  title: 3a Needs Implementation discussion
+- description: ''
+  title: Next Release

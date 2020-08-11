@@ -1,5 +1,7 @@
 
-## quick script to sync labels and milestones between GitHub repos
+## ghmeta.py
+
+A quick script to sync labels and milestones between GitHub repos.
 
 ### Set up
 

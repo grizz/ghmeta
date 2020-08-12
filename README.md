@@ -52,10 +52,10 @@ The data file will be made correctly when combining the two commands as such:
 ghmeta.py --pull-from=$REPO_URL --push-to=$REPO_URL > data.yml
 ```
 
-Or directly sync between two with:
+Or directly sync between a source and one or more repos with:
 
 ```sh
-ghmeta.py --pull-from=$REPO_URL --push-to=$REPO_URL push`
+ghmeta.py --pull-from=$REPO_URL --push-to=$REPO_URL[,$REPO_URL] push`
 ```
 
 ## TODO:

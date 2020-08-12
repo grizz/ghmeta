@@ -30,7 +30,7 @@ def load_local(filename="data.yml"):
 
 
 def load_github(repo):
-    data = dict(ghmeta={"sync_to": []}, labels=[], milestones=[])
+    data = dict(ghmeta={"push_to": []}, labels=[], milestones=[])
 
     for each in repo.get_labels():
         data["labels"].append(
@@ -82,32 +82,32 @@ def push_data(repo, data):
 
 @click.command()
 @click.option(
-    "--read-from",
+    "--pull-from",
     help="Read metadata from here, default is none meaning local file (`data.yml`).",
 )
 @click.option(
-    "--sync-to", help="Push metadata to these repos (may be a comma separated list"
+    "--push-to", help="Push metadata to these repos (may be a comma separated list"
 )
 @click.argument("command", default="display")
-def ghmeta(command, read_from, sync_to):
+def ghmeta(command, pull_from, push_to):
     ghobj = auth()
 
-    if read_from:
-        data = load_github(ghobj.get_repo(read_from))
+    if pull_from:
+        data = load_github(ghobj.get_repo(pull_from))
     else:
         data = load_local()
 
-    # if sync_to is passed, overwrite file data
-    if sync_to:
-        data["ghmeta"]["sync_to"] = sync_to.split(",")
+    # if push_to is passed, overwrite file data
+    if push_to:
+        data["ghmeta"]["push_to"] = push_to.split(",")
 
     if command == "display":
         print(yaml.dump(data))
     elif command == "push":
-        sync_to = data["ghmeta"]["sync_to"]
-        if not sync_to:
-            raise Exception("nothing to push to, set sync_to in data or command line")
-        for repo_url in sync_to:
+        push_to = data["ghmeta"]["push_to"]
+        if not push_to:
+            raise Exception("nothing to push to, set push_to in data or command line")
+        for repo_url in push_to:
             print(f"syncing {repo_url}")
             push_data(ghobj.get_repo(repo_url), data)
     else:

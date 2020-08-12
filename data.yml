@@ -1,5 +1,5 @@
 ghmeta:
-  sync_to:
+  push_to: []
 #  - peeringdb/peeringdb-py
 #  - peeringdb/django-peeringdb
 labels: []

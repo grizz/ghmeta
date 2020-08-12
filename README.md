@@ -22,10 +22,10 @@ pipenv run ./ghmeta.py
 Usage: ghmeta.py [OPTIONS] [COMMAND]
 
 Options:
-  --read-from TEXT  Read metadata from here, default is none meaning local
+  --pull-from TEXT  Read metadata from here, default is none meaning local
                     file (`data.yml`).
 
-  --sync-to TEXT    Push metadata to these repos (may be a comma separated
+  --push-to TEXT    Push metadata to these repos (may be a comma separated
                     list
 
   --help            Show this message and exit.
@@ -35,13 +35,13 @@ Options:
 
 Default command is display, which will show from the yaml file `data.yml` by default. The other command is `push` which will take from the data source and push to one or more GitHub repos.
 
-To create a new data file, you can run `ghmeta.py --read-from=$REPO_URL > data.yml`
+To create a new data file, you can run `ghmeta.py --pull-from=$REPO_URL > data.yml`
 
-To push the source to destination repos, you'll need to supply a list of `$REPO_URL`s to push to using either the command line `--sync-to=user/repo0,user/repo2` or the data file as:
+To push the source to destination repos, you'll need to supply a list of `$REPO_URL`s to push to using either the command line `--push-to=user/repo0,user/repo2` or the data file as:
 
 ```yml
 ghmeta:
-  sync_to:
+  push_to:
   - user/repo0
   - user/repo1
 ```
@@ -49,13 +49,13 @@ ghmeta:
 The data file will be made correctly when combining the two commands as such:
 
 ```sh
-ghmeta.py --read-from=$REPO_URL --sync-to=$REPO_URL > data.yml
+ghmeta.py --pull-from=$REPO_URL --push-to=$REPO_URL > data.yml
 ```
 
-Or directly sync between two with:
+Or directly sync between a source and one or more repos with:
 
 ```sh
-ghmeta.py --read-from=$REPO_URL --sync-to=$REPO_URL push`
+ghmeta.py --pull-from=$REPO_URL --push-to=$REPO_URL[,$REPO_URL] push`
 ```
 
 ## TODO:

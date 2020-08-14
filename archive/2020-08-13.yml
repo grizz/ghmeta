@@ -1,0 +1,130 @@
+ghmeta:
+  push_to: []
+labels:
+- color: c5def5
+  description: null
+  name: 3rd party addons
+- color: fbca04
+  description: null
+  name: AC
+- color: c2e0c6
+  description: Issues cannot be completed until another issue is done
+  name: Blocked
+- color: fbca04
+  description: null
+  name: Board
+- color: c2e0c6
+  description: Data Ownership TF related issue
+  name: Data Ownership TF
+- color: 3E4B9E
+  description: null
+  name: Epic
+- color: 9bf2c0
+  description: larger than a Major or Minor will need a quote
+  name: Hourly
+- color: d93f0b
+  description: Issue is in a  current Quote
+  name: In a Quote
+- color: c2e0c6
+  description: 4 - 10 hours work from vendor 20C
+  name: Major
+- color: c2e0c6
+  description: Up to 4 hours
+  name: Minor
+- color: 0052cc
+  description: Fixing the issue will not require touching the code
+  name: No code change
+- color: f4947a
+  description: Outreach Committee
+  name: OC
+- color: fbca04
+  description: null
+  name: Operations
+- color: fbca04
+  description: null
+  name: PC Candidate
+- color: c2e0c6
+  description: Less time than minor, should just be a PR
+  name: PR
+- color: c2e0c6
+  description: ''
+  name: Quote
+- color: ffa500
+  description: Implementing this ticket requires user be notified
+  name: Requires Notice
+- color: 0e8a16
+  description: Issue will be dealt in Support Contract
+  name: Support
+- color: c2e0c6
+  description: issue needs more discussion
+  name: TBD
+- color: ee0701
+  description: null
+  name: bug
+- color: FF6700
+  description: null
+  name: data quality
+- color: 0366d6
+  description: Pull requests that update a dependency file
+  name: dependencies
+- color: cccccc
+  description: null
+  name: duplicate
+- color: 84b6eb
+  description: null
+  name: enhancement
+- color: bfd4f2
+  description: null
+  name: high availability
+- color: e6e6e6
+  description: null
+  name: invalid
+- color: fef2c0
+  description: null
+  name: outreach
+- color: cc317c
+  description: null
+  name: question
+- color: c5def5
+  description: null
+  name: reporting
+- color: f4e692
+  description: ''
+  name: search
+- color: e99695
+  description: ''
+  name: security
+- color: 1d76db
+  description: null
+  name: tooling
+- color: 304cc9
+  description: ''
+  name: translations
+- color: 1d76db
+  description: null
+  name: usability
+- color: ffffff
+  description: null
+  name: wontfix
+milestones:
+- description: "Issues under Decide queue. \r\nIssues are kept in Decide while the\
+    \ Product Committee discusses the issue. \r\nNext milestone is \"Consensus Reached\""
+  title: 1 Decide
+- description: "Issues that are in the Consensus queue.\r\nWhen a decision is made\
+    \ about how an issue will be dealt with by the Product Committee, the issue is\
+    \ moved to \"Consensus Reached\"\r\nNext milestone is \"Consensus Finalized\"\r\
+    \nPrevious milestone is \"Decide\""
+  title: 2 Consensus Reached
+- description: "When an issue is at milestone \"Consensus reached\" PC members have\
+    \ the opportunity to oppose for five days. If no one objects the issue is moved\
+    \ forward to Consensus Finalized.\r\nIssues here wait for implementation details\
+    \ fo be sorted out.\r\nThe next milestone is \"Implementation Discussion\""
+  title: 3 Consensus Finalized
+- description: 'Last milestone before milestone "Next release". The predecessor is
+    "Consensus Finalized". '
+  title: 4 Ready for Implementation
+- description: ''
+  title: 3a Needs Implementation discussion
+- description: ''
+  title: Next Release
+

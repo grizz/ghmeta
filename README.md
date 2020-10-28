@@ -58,9 +58,43 @@ Or directly sync between a source and one or more repos with:
 ghmeta.py --pull-from=$REPO_URL --push-to=$REPO_URL[,$REPO_URL] push`
 ```
 
-## TODO:
+### TODO:
 
 - add `--delete` flag
 - add `--exclude` flag
 - add `--overwrite` flag
+
+## release_notes.py
+
+Script that generates release notes markdown.
+
+### Set up
+
+#### Requirements
+
+- python 3.6+
+-  environment variable `GHMETA_TOKEN` to be set to a GitHub personal access token (<https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token>) with access to the repos you wish to operate on.
+
+```sh
+export GHMETA_TOKEN=$TOKEN
+pipenv install
+pipenv run ./release_notes.py -r "peeringdb/peeringdb"
+```
+
+### Usage
+
+```
+usage: release_notes.py [-h] --repository REPOSITORY [--milestone MILESTONE]
+
+Extract release notes from Github issues and format into a Markdown table.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --repository REPOSITORY, -r REPOSITORY
+                        Repository to scan
+  --milestone MILESTONE, -m MILESTONE
+                        Name of milestone
+```
+
+The milestone name will default to "Next release"
 

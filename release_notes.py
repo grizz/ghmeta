@@ -34,7 +34,7 @@ def get_release_notes(repo_name, milestone_name):
     target_milestone = get_target_milestone_instance(repo, milestone_name)
 
     notes = []
-    for issue in repo.get_issues(milestone=target_milestone):
+    for issue in repo.get_issues(milestone=target_milestone, state="all"):
         meta = {}
         meta["number"] = int(issue.number)
         meta["title"] = issue.title
@@ -59,7 +59,7 @@ def get_target_milestone_instance(repo, milestone_name):
             milestone (Github.Milestone): Instance of the milestone class from Github client
     """
 
-    for milestone_inst in repo.get_milestones():
+    for milestone_inst in repo.get_milestones(state="all"):
         if milestone_inst.title.lower() == milestone_name.lower():
             target_milestone = milestone_inst
             return target_milestone
@@ -75,7 +75,7 @@ def create_md_file(notes):
     Creates the Markdown file given the extract release notes text and meta information.
 
         Parameters:
-            notes (List[Dict]): List of dictionaries, each dictionary containing the 
+            notes (List[Dict]): List of dictionaries, each dictionary containing the
                                 release note information from a single Github issue.
 
     """

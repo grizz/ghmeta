@@ -35,6 +35,11 @@ def get_release_notes(repo_name, milestone_name):
 
     notes = []
     for issue in repo.get_issues(milestone=target_milestone, state="all"):
+
+        if issue.pull_request:
+            # pull requests should be ignored
+            continue
+
         meta = {}
         meta["number"] = int(issue.number)
         meta["title"] = issue.title
